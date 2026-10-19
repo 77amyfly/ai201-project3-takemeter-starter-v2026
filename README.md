@@ -41,8 +41,13 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
-
+TakeMeter is a text classifier for comments from r/dogs, a large public
+subreddit for dog owners. I collected comments from five threads, two [Fluff]
+threads and three [Misc Help] threads, and labeled them by what each commenter
+is doing in the reply. I then fine-tuned a small language model on those
+labels. The aim is to find out whether a model can tell apart comments that
+explain their point, comments that only state it, and comments that just tell
+a story.
 
 ---
 
@@ -54,34 +59,60 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `argued`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:**A conclusion, opinion, or piece of advice that is backed
+by at least one fact, where a fact can be a number, a reason, a mechanism,
+or the writer's own experience.
 
 **Example 1:**
->
+>for perspective I have already spent close to 5k this year on my dog between several emergency room and urgent care vet visits (mostly unrelated issues), pet insurance, food/toys, boarding, grooming. 1k a year is doable only as long as nothing unexpected happens.
 
 **Example 2:**
->
+>First, your sleep is more important than anything. With your dog being a small fragile breed, he should NEVER be jumping off or onto a bed/couch, etc. The short legs give less time to absorb the impact, therefore causing higher risk for knee, wrist, elbow and back injury. A good gage to go by is the height of any object for jumping onto or off of should be no higher than the length of your dog, minus tail & head.This does not apply to puppies, senior dogs dogs, long back breeds (dachshund, Shiztu, etc) or any "delicate " breed. After he and you are deemed healthy, i would start with a small wire crate in the living room. Leave door open at all times. Cover with thin blanket and place extra cushy, soft bedding inside. We want this to be a place he "wants" to go. After set up, give "high value" treat, like a piece of plain chicken to entice him to explore. Do this for a week or 2 until he grows accustomed to his own little man cave. We want him to go in regularly because he likes it, not because he gets a treat. You can slowly cut the treat to a tiny piece, then just affection after he goes in. In other words, his crate becomes a very inviting, positive place. I suggest as others have said, exercise him as much as possible 1 hour before your bedtime. BTW, dogs typically do not rationalize. He will not be wondering why he is not in your bed at night. This my opinion after working for a veterinarian for 26 years. Good luck sweetie. Keep us posted.
+
+
+### `asserted`
+
+**Definition:**A conclusion, opinion, or piece of advice with no fact
+behind it.
+
+**Example 1:**
+>Absolutely my 7yr old golden thinks shes a tiny pup and honestly i feel like its a good thing. Keeps her youthful and full of energy.
+
+**Example 2:**
+>A good flex is solid IGP-level heelwork on command. "Fuss" and the dog instantly goes into active heeling anytime, anywhere.
+
+### `experience`
+
+**Definition:** Only facts or personal experience, with no conclusion,
+opinion, or advice.
+
+**Example 1:**
+> Mine's 80 pounds and still tries to climb onto my shoulder like a parrot
+> whenever I sit on the couch
+
+**Example 2:**
+> my Rottweiler would always come curl up in my lap whenever I would sit
+> down crisscross applesauce. She did that until she was 12 when she passed
+> away
+
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:**`argued` and `experience`
+
 
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-
+A comment counts as having a conclusion, opinion, or advice only if it
+states one explicitly in its own text. Agreeing with another comment
+("I agree completely") or an unclear stance does not count. If there is
+no explicit conclusion, the comment is `experience`. If there is one, it
+is `argued` when it also contains a fact (a number, a reason, a
+mechanism, or the writer's own experience) and `asserted` when it does
+not.
 
 
 ---
