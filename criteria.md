@@ -53,7 +53,9 @@ whether you hit them:
 
 ## 1.Overall accuracy on the held-out test split is at least 0.70, at every seed tested.
 
+
 **Why this target:**
+
 With three labels, random guessing gives about 0.33, so 0.70 is well above
 chance: it means at least 7 of every 10 comments are labeled correctly. My
 test split will have about 30 comments, so one wrong prediction moves
@@ -63,7 +65,9 @@ accuracy by about 3.3 points and 21 of 30 correct is the cutoff.
 ## 2.Every label (`argued`, `asserted`, `experience`) has an F1 of at least 0.50 on the held-out test split, at every seed tested.
 
 <!-- Your criterion. -->
+
 **Why this target:**
+
 Random guessing among three labels gives about 0.33, so 0.50 is clearly
 above chance. I set it lower than I would for overall accuracy because my
 smallest label will only have about 20 examples in the test split, and
@@ -75,7 +79,9 @@ an F1 computed on that few moves a lot between seeds.
 
 <!-- Your criterion. -->
 
+
 **Why this target:**
+
 I want the three labels to be reasonably balanced so the model has to
 learn all of them. If one label were more than 50% of the data, a model
 that always guessed it would score above 0.50 accuracy without learning
@@ -91,6 +97,7 @@ unstable to trust.
 <!-- Your criterion. -->
 
 **Why this target:**
+
 A good label definition should give the same answer no matter who applies
 it, otherwise the model has no stable signal to learn. 80% means at most 6
 of 30 comments are labeled differently. I did not set it higher because
@@ -103,6 +110,7 @@ may make differently from me.
 <!-- Your criterion. -->
 
 **Why this target:**
+
 My test split has about 30 comments, so each third has about 10 and one
 wrong prediction moves its accuracy by 0.10. A gap of 0.20 means at
 least 2 more correct predictions in the confident third than in the
