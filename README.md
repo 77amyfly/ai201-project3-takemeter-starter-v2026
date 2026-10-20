@@ -179,13 +179,16 @@ I labelled 118 rows myself, and Claude pre-labelled the other 82, which I read a
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** distilbert-base-uncased
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** <!-- epochs, learning rate, batch size, seed -->3 epochs, learning rate 2e-5, batch size 16, max length 128 tokens, seed 42. Trained on an Apple Silicon GPU (MPS) torch:  2.14.1.
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Nothing
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
+**Split sizes:** train 139 / val 31 / test 30. Test split per label:
+argued 10, asserted 6, experience 14. `asserted` has fewer than 8
+examples in the test split.
+<!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
@@ -204,15 +207,30 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I labelled the first 119 rows myself, then asked
+  Claude to pre-label the remaining 101 rows using my three definitions
+  and my decision rule.
+- *What came back:* A label for every row. 72 of those rows are still in
+  the final 200-row file, marked `pre-labeled` in the note column.
+- *What I changed:* I read every row and changed 13 of Claude's labels.
+  For example, I moved "Foster a dog. The rescue would pay for medical
+  bills..." from `argued` to `asserted`, because the second sentence
+  only restates the advice.
+
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Why a model needs labels at all, and what kinds of
+  labels and label names real projects use.
+- *What came back:* Real classifiers tend to use short noun or attribute
+  names (for example spam / not spam), the model only sees them as
+  numbers, so the written definitions matter more than the names. Real
+  teams also have several people label the same data and measure how
+  often they agree.
+- *What I changed:* I chose label names that describe what a comment
+  does (`argued`, `asserted`, `experience`) instead of its topic, wrote
+  an explicit decision rule.
+
 
 **Pre-labelling disclosure:**
 
