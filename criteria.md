@@ -60,6 +60,7 @@ With three labels, random guessing gives about 0.33, so 0.70 is well above
 chance: it means at least 7 of every 10 comments are labeled correctly. My
 test split will have about 30 comments, so one wrong prediction moves
 accuracy by about 3.3 points and 21 of 30 correct is the cutoff.
+
 ---
 
 ## 2.Every label (`argued`, `asserted`, `experience`) has an F1 of at least 0.50 on the held-out test split, at every seed tested.
@@ -103,6 +104,7 @@ it, otherwise the model has no stable signal to learn. 80% means at most 6
 of 30 comments are labeled differently. I did not set it higher because
 whether a conclusion counts as "explicit" is the one call another person
 may make differently from me.
+
 ---
 
 ## 5.Accuracy on the most confident third of predictions is at least 0.20 higher than on the least confident third, at every seed tested.
