@@ -123,18 +123,21 @@ not.
      cases. -->
 
 **Where the posts came from:**
+All 200 rows are comments from r/dogs, a public subreddit that needs no
+login. I copied the comment sections of five threads in a browser: two
+[Fluff] threads and three [Misc Help] threads.
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+I labelled 118 rows myself, and Claude pre-labelled the other 82, which I read and corrected.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `experience` | 91 | 45.5% |
+| `argued` | 67 | 33.5% |
+| `asserted` | 42 | 21.0% |
+| **Total** | 200 | 100% |
 
 **Three hard cases**
 
@@ -142,25 +145,33 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:*Foster a dog. The rescue would pay for medical bills. Then you help a
+> dog and can have one safely.
 >
-> *Could have been:*
+> *Could have been:* `argued` or `asserted`
 >
-> *I chose, because:*
+> *I chose, because:* `asserted`. It gives advice, but the sentence
+> after it only restates the advice instead of giving a reason.
 
 **2.**
-> *The post:*
+> *The post:* simply walking though a town center calmly. i've got a reactive lab
+> and a puppy, there's always some level of chaos on walks for me. having
+> a reactive dog is hard
 >
-> *Could have been:*
+> *Could have been:* `argued` or `experience`
 >
-> *I chose, because:*
+> *I chose, because:* `argued`. It states a conclusion ("having a
+> reactive dog is hard") and backs it with the commenter's own
+> experience of chaotic walks.
 
 **3.**
-> *The post:*
+> *The post:* Absolutely my 7yr old golden thinks shes a tiny pup and honestly i
+> feel like its a good thing. Keeps her youthful and full of energy.
 >
-> *Could have been:*
+> *Could have been:* `asserted` or `experience`
 >
-> *I chose, because:*
+> *I chose, because:* `asserted`. It is more than a story about the
+> commenter's own dog: it states a personal opinion with no evidence or explanation behind it.
 
 ---
 
