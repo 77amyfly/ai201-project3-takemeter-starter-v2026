@@ -248,12 +248,13 @@ of next unit's variance. -->
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.333 | 0.633 | +0.300 |
+| Macro F1 | 0.167 | 0.462 | +0.295 |
+| F1 — `argued` | 0.500 | 0.667 | +0.167 |
+| F1 — `asserted` | 0.000 | 0.000 | +0.000 |
+| F1 — `experience` | 0.000 | 0.718 | +0.718 |
 
-**What I predicted before I looked:**
+**What I predicted before I looked:** the trained model will beat the baseline on experience and argued, because training on my labeled posts teaches it the language patterns of those two labels.
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 

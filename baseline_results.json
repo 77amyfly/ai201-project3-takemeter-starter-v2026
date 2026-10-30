@@ -1,0 +1,184 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.3333333333333333,
+    "f1_macro": 0.16666666666666666,
+    "per_label": {
+      "argued": {
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "support": 10
+      },
+      "asserted": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "experience": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 14
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "I literally have high deductible pet insurance with no cap on the dog it makes sense on. And honestly, if you can afford to replace your car, you probably should drop collision. \r\n\r\nAnd yeah, insurance sometimes pays off, but you\u2019re probably not going to beat the house. Actuaries are good at their jobs. If someone has less than 2K to spend on their dog a year like OP, the appropriate low-deductible insurance policy would eat like a quarter of that budget and/or cap out at like a 5-10k limit anyways. For OP\u2019s budget, \u201cfigure out how big a hit you can take, decide if you\u2019ll be okay with putting the dog down if it\u2019s more expensive than that, don\u2019t get a dog if you aren\u2019t\u201d is absolutely the advice I would give, and I work in insurance.",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "Thank you for sharing, that is so sweet how he remembered your pup. It sounds like they had a very special relationship. I am glad your pup still has you (and that you have each other).",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "I rescued my dog in 2019 when I was making the same amount. I struggled a lot to pay my bills, take care of her, and get her basic things that dogs of any age need.\r\n\r\nI wouldn\u2019t recommend getting a dog until you have better cash flow and savings. I don\u2019t regret getting mine for a second, but I\u2019d be lying to say it wasn\u2019t some of the hardest times of my life. I went without eating more than a few times because her care and needs came first.\r\n\r\nAnimals are awesome. They\u2019re more expensive than you\u2019d think. On average, I think with food/basic toys/equipment/vet visits that aren\u2019t emergencies, it\u2019s about $2,500 a year. And there\u2019s always emergencies.\r\n\r\nWhile there are ways to reduce costs, I would recommend waiting.",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "My friendly but excitable dog has learned to be calm and gentleman around babies and kids. He's so sweet.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "my lab play so gently with my 1yo daughter. I know is very common but he plays soooo rough with me. it melts my heart",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "Beyond daily expenses, it\u2019s the emergency bills that you have to keep in mind. Especially as they get older. My dogs (both Pomeranians) only needed their food, supplements, yearly physicals and dental cleanings up to last year, when one of mine got incredibly sick. We\u2019re deep into the 5-figures with his medical care and a lot of those bills came without warning. He suddenly came down with pneumonia and had to be hospitalized for several days. It was around $2000 per DAY to keep him in the hospital and he would have died otherwise. That week, not including the following 2 months of antibiotics and repeated vet checkups, cost about $7000. I didn\u2019t buy pet insurance but I did hold money back in case something like this happened and I\u2019m so glad that I did because it would have absolutely devastated me to have to decline treatment because I couldn\u2019t afford it.",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "I came to say the same thing. My dog\u2019s change in sleep was a direct result of a new health issue I had. I went to my doctor and told them of the dog\u2019s behavior, and they ordered tests, which revealed the issue. As soon as the issue was treated, my dog went back to normal behavior during my sleep time.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "I only have to hint at toothbrushing and mine goes to the bathroom. I think she really likes the taste of the toothpaste, Virbec poultry flavor.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "What kind of dog? How big?\r\n\r\nI know I was spending over $600 in food per year for my dog.\r\n\r\nFlea and tick prevention? Is a rabies vaccine required where you live?",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "At first I thought I read \u201cI tried talking him out of it\u201d and chuckled",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "Insurance is very often a lifesaver, literally. Many critical veterinary situations will run you well over $15K, which is way more than you\u2019d pay in insurance. And if you have more than one such issue, you can quickly end up in a situation where you\u2019re making healthcare decisions based on how much debt you can put on a credit card. I agree with your points other than this one, which is so often tossed out there and in my experience it just really isn\u2019t true. (Maybe because we now have so many specialist vets providing cutting-edge treatments to injuries and illnesses.)",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "Thanks. And yeah, I didn\u2019t mean to be snarky, I just see a lot of people automatically recommending insurance whenever someone is like \u201cfinances are a concern\u201d, when you really have to evaluate what you can get and how useful it\u2019ll be.",
+      "gold": "asserted",
+      "predicted": "argued"
+    },
+    {
+      "text": "I have two miniature schnauzers that are 10 and 3. We got them both as puppies from the same breeder and they are related. The older one lets me groom him, trim nails, brush teeth, basically do anything to him and is very chill about it. The younger one thinks we are trying to kill her anytime we groom her or try to trim nails. Both of their recall is pretty good now but the older one is only good because he\u2019s old, he didn\u2019t care to listen when he was young. The younger one always had pretty good recall. We have done everything pretty much the same for both dogs",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "There are even archaeological cadaver sniffer dogs. A recent grave is easily sniffed out, and is why you so often hear \u201cbody found by dog walker\u201d on the news. I even know of underwater cadaver search dogs who guide the boat to a scent by their position on the boat. The dog will run to the edge where the scent trail is so the helmsman turns the boat till the dog is out front. They then jump off where the scent originates from and swing in a circle for the diver to jump into! They can detect a toe in Amsterdam\u2019s lagoon/harbour apparently \ud83d\ude33",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "IMO that isn't enough. Have you accounted for heartworm prevention, yearly vaccinations, dental cleaning. My dog has needed two TPLOs in the last 3 years (around 10 000 combined). What if they become critically unwell? Have you looked at the cost of an overnight stay in your nearest animal hospital? What health conditions does your preferred breed of dog have? What are the upfront and ongoing costs of those conditions.",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "My 105 lbs giant has zero comprehension of his size. He looks at a barking chihuahua like it\u2019s a bear and hides behind my legs. He also stands on my feet and doesn\u2019t understand why it would hurt.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "My old lab Bella was very well trained and obedient.\r\n\r\nWe would go to the dog park and i was throwing her dummy doing retrieves.\r\n\r\nSomebody\u2019s pound hound gets hold of it and the owner notices we\u2019ve stopped our retrieving. \u201cOh so sorry\u201d -yeah no problem.\r\n\r\nCall Bella to heel and she sits by me while this lady runs all over the dog park chasing her dog down. She tries calling\u2026 threatening\u2026. Pleading\u2026finally she corners the dog and the dog trips and she jumps on him.\r\n\r\nShe wrestles the dummy away and now she\u2019s dragging her dog by the collar towards me to return it.\r\n\r\n-just throw it out there, Bella will bring it.\r\n\r\nShe throws it. Bella doesn\u2019t move. I send her and she\u2019s out like a bolt of lightning and she brings me the dummy to hand and sits down.\r\n\r\nThat lady didn\u2019t know what just happened.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "my Rottweiler would always come curl up in my lap whenever I would sit down crisscross applesauce. She did that until she was 12 when she passed away",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "Honestly, 30k can be enough if you\u2019re careful. I don\u2019t make a ton either, and I\u2019ve had my dog for years. The monthly stuff \u2014 food, treats, basic vet \u2014 is totally doable on a budget. The real killer is emergencies. One surgery can be $3k-$5k easy. So the trick is: don\u2019t try to save up $5k on your own. Get pet insurance. I pay like $35/month and it covers 80% after a $250 deductible. That\u2019s the only reason I can sleep at night. If you can also put $50/month into a separate savings account just for the dog, even better. 1-2k leftover per year is tight but workable if you have insurance. Without it, you\u2019re one bad day away from a really hard choice. Also, consider adopting an adult dog instead of a puppy. Less chaos, often already trained, and you\u2019ll know more about their health upfront. You clearly care enough to ask this, which already puts you ahead of a lot of people. Go for it, just get the insurance first.",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "This! Since OP tried some stuff to make the dog more comfortable, I'd see about recording themselves sleeping/maybe get a sleep study",
+      "gold": "asserted",
+      "predicted": "argued"
+    },
+    {
+      "text": "My dad was comatose in the hospital for several days. Since I lived in another state, I stayed at his house and drove his car to visit him at the hospital and come home late. Every time I pulled into the driveway, I could hear his dog whine and get excited, only to be disappointed when I walked in without my dad.\r\n\r\nAfter my dad passed, I wiped his face with a tissue to pick up his scent. When I got home that night, I let his dog sniff the tissue. He took several big sniffs and lay down. After that, he no longer got excited when he heard me drive my dad's car into the driveway.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "I just want to say the fact you\u2019re asking shows you\u2019ll be a good pet parent",
+      "gold": "asserted",
+      "predicted": "argued"
+    },
+    {
+      "text": "Needed to read this! 8mo pregnant and have had to put a gate up to keep my dog out of my side of the house at night. He is well set up with TWO comfy beds in his other favorite spots, but his sad face has made me feel so guilty at bedtime.\r\n\r\nI have to though bc the constant sounds of him licking, scratching, tapping his little toes all around, or w/e the hell he does at night has been making my already shit sleep worse.",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "Oh damn I thought maybe it was early signs of dementia specifically sun-downing but then I see he\u2019s only 3 years old. Poor baby!",
+      "gold": "asserted",
+      "predicted": "argued"
+    },
+    {
+      "text": "Sounds basic - but perfect recall. Some dogs are just so much better about it.",
+      "gold": "asserted",
+      "predicted": "argued"
+    },
+    {
+      "text": "Definitely more exercise is the answer. When energy is released through playing, long walks or running, your dog will be more calm at bedtime.\r\nIt seems like your baby needs to exert much more energy in the early evening.\r\nIf they let go of that healthy energy throughout the day, your baby will be much happier:).\r\nGood luck.\ud83d\udc4d. Hopefully that\u2019s all he needs. Worked for me with my dog.\r\nA good round of throwing the ball and playing catch cured every his anxiety:)",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "I think being responsible and eashing your dog in public unless it has perfect recall, muzzling your dog if required, cleaning up after your dog, and managing your dogs reactivity are all flexes, since so many people don't.",
+      "gold": "argued",
+      "predicted": "argued"
+    },
+    {
+      "text": "Oh yeah I love any moments that highlight the connections between owners-dog",
+      "gold": "experience",
+      "predicted": "argued"
+    },
+    {
+      "text": "Omg I want to see this mix! Any husky mix is usually good for some sassy judgment haha.",
+      "gold": "asserted",
+      "predicted": "argued"
+    },
+    {
+      "text": "Hey! We have a chihuahua that used to do exactly this! It ended up being that he was thirsty\ud83d\ude05 we put a little bowl by the bedside table and that helped.\r\n\r\nBut if that also disrupts your sleep it\u2019s totally fair to not have him sleep with you! Ive had to do this with another pet of mine and we\u2019ve compromised so that she\u2019s not allowed to sleep in bed with me but can climb up in bed in the morning for some quick cuddling \u263a\ufe0f",
+      "gold": "argued",
+      "predicted": "argued"
+    }
+  ]
+}
