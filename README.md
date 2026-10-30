@@ -271,31 +271,38 @@ of next unit's variance. -->
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.633 | 0.500 | 0.467 | 0.167 |
+| Macro F1 | 0.462 | 0.278 | 0.212 | 0.249 |
+| F1 — `argued` | 0.667 | 0.182 | 0.000 | 0.667 |
+| F1 — `asserted` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `experience` | 0.718 | 0.651 | 0.636 | 0.082 |
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
-
+| 1. Overall accuracy | ≥ 0.70 at every seed | MISSED | MISSED | MISSED | MISSED |
+| 2. Every label F1 | ≥ 0.50 at every seed | MISSED | MISSED | MISSED | MISSED |
+| 3. Label balance in `labels.csv` | no label > 50% or < 20% of rows | MET | MET | MET | MET |
+| 4. Second labeler agreement | ≥ 80% (24 of 30) |   |   |   |   |
+| 5. Confident third beats unsure third | gap ≥ 0.20 at every seed | MET | MET | MET | MET |
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
-
-| true \ predicted |  |  |  |
+| true \ predicted | argued | asserted | experience |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **argued** | 5 | 0 | 5 |
+| **asserted** | 0 | 0 | 6 |
+| **experience** | 0 | 0 | 14 |
+
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
 
-
+Biggest confusion: 6 real `asserted` posts called `experience`. and 0 real `experience` posts were called `asserted`. Every error goes toward `experience`: 5 of 10 `argued` posts were also called `experience`, and no real `experience` post was ever called anything else. At seeds 7 and 2024 the pattern got stronger (`argued` → `experience` rose to 9 and 10), so the model collapses toward the majority label.
 
 ---
 
