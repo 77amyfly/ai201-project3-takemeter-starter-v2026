@@ -231,6 +231,12 @@ of next unit's variance. -->
   does (`argued`, `asserted`, `experience`) instead of its topic, wrote
   an explicit decision rule.
 
+**Moment 3**
+
+- *What I asked for:* How to read my confusion matrix, and what I could change so the model would learn the differences between my labels.
+- *What came back:* Claude pointed out that every error flowed toward `experience`, and suggested that `asserted` (42 rows vs. 91 for `experience`) probably had too few examples for the model to learn. It offered this as a hypothesis to test, not a fact.
+- *What I changed:* I tested it with one change: I found and labeled 30 new `asserted` posts myself, using my original definitions, and re-ran the same three seeds. `asserted` F1 rose from 0.000 to 0.154, 0.308 and 0.429, but overall accuracy stayed poor (0.514 / 0.514 / 0.486). I concluded the total dataset is probably too small for the model to learn all three boundaries, not just the one label I added to.
+
 
 **Pre-labelling disclosure:**
 
