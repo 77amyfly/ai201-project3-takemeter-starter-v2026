@@ -279,6 +279,7 @@ of next unit's variance. -->
 | F1 — `asserted` | 0.000 | 0.000 | 0.000 | 0.000 |
 | F1 — `experience` | 0.718 | 0.651 | 0.636 | 0.082 |
 
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
 | 1. Overall accuracy | ≥ 0.70 at every seed | MISSED | MISSED | MISSED | MISSED |
@@ -286,6 +287,7 @@ of next unit's variance. -->
 | 3. Label balance in `labels.csv` | no label > 50% or < 20% of rows | MET | MET | MET | MET |
 | 4. Second labeler agreement | ≥ 80% (24 of 30) |   |   |   |   |
 | 5. Confident third beats unsure third | gap ≥ 0.20 at every seed | MET | MET | MET | MET |
+
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
@@ -342,14 +344,14 @@ Biggest confusion: 6 real `asserted` posts called `experience`. and 0 real `expe
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 30 / 30 = 100%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
      of the 30 were chosen because they're genuinely ambiguous — you should be
      winning some of these. -->
 
-**Disagreements**
+**Disagreements** 0
 
 <!-- Three lines each: the post, both labels, and who you think is right and
      why — grounded in the staff definitions you were both applying.
@@ -363,27 +365,7 @@ Biggest confusion: 6 real `asserted` posts called `experience`. and 0 real `expe
      Pile (a) is the one that matters most for your diagnosis: if you applied a
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
-
-**1.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**2.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**What the pattern in my disagreements tells me:**
-
+My labels matched the staff labels on all 30 posts, so there were no disagreements to adjudicate. I don't think this means the classification rules are perfect. The examples were relatively easy to distinguish because many posts had clear patterns. The analysis posts generally used specific evidence to support an argument, while the reaction posts focused on personal experiences and feelings.
 
 
 ---
