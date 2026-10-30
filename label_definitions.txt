@@ -5,6 +5,7 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+
+argued: A conclusion, opinion, or piece of advice that is backed by at least one fact, where a fact can be a number, a reason, a mechanism, or the writer's own experience.
+asserted: A conclusion, opinion, or piece of advice with no fact behind it.
+experience: Only facts or personal experience, with no conclusion, opinion, or advice.
