@@ -373,46 +373,63 @@ My staff agreement check matched 30 of 30, so I found no sign that I apply label
      Pile (a) is the one that matters most for your diagnosis: if you applied a
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
-My labels matched the staff labels on all 30 posts, so there were no disagreements to adjudicate. I don't think this means the classification rules are perfect. The examples were relatively easy to distinguish because many posts had clear patterns. The analysis posts generally used specific evidence to support an argument, while the reaction posts focused on personal experiences and feelings.
 
 
 ---
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** I added 30 new `asserted` posts to `labels.csv`.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** criteria 1 and 2 
 
 ### Run Log — After
 
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.514 | 0.514 | 0.486 | 0.029 |
+| Macro F1 | 0.411 | 0.421 | 0.346 | 0.075 |
+| F1 — `argued` | 0.429 | 0.333 | 0.000 | 0.429 |
+| F1 — `asserted` | 0.154 | 0.308 | 0.429 | 0.275 |
+| F1 — `experience` | 0.651 | 0.622 | 0.609 | 0.042 |
+
+| true \ predicted | argued | asserted | experience |
+|---|---|---|---|
+| **argued** | 3 | 1 | 6 |
+| **asserted** | 1 | 1 | 9 |
+| **experience** | 0 | 0 | 14 |
+
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.70 at every seed | 0.514 | 0.514 | 0.486 | MISSED |
+| 2. Every label F1 | ≥ 0.50 at every seed | 0.154 (`asserted`) | 0.308 (`asserted`) | 0.000 (`argued`) | MISSED |
+| 3. Label balance in `labels.csv` | no label > 50% or < 20% of rows | 21.0%–45.5% | 21.0%–45.5% | 21.0%–45.5% | MET |
+| 4. Second labeler agreement | ≥ 80% (24 of 30) | not tested | not tested | not tested | NOT TESTED |
+| 5. Confident third beats unsure third | gap ≥ 0.20 at every seed | 0.909 vs 0.455 (gap 0.45) | 1.000 vs 0.364 (gap 0.64) | 0.818 vs 0.364 (gap 0.45) | MET |
 
-**Did it help, and how do I know:**
+
+**Did it help, and how do I know:** 
+
+Partly. `asserted` F1 went from 0.000 at all three seeds to 0.154, 0.308 and 0.429, so the extra examples let the model start recognizing the thinnest label. But overall accuracy did not improve (0.633 / 0.500 / 0.467 → 0.514 / 0.514 / 0.486), criteria 1 and 2 are still MISSED, and the model still defaults to `experience`: 8–9 of the 11 `asserted` test posts were still called `experience`. `argued` did not improve (F1 0.000 at seed 2024), which fits the change, since I only added `asserted` examples. Thirty more examples helped but were not enough.
+
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
-
-
 
 ---
 
 ## What's Still Broken
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
-
+- **Criterion 1 (accuracy ≥ 0.70):** Still MISSED (best 0.514). I would add many more examples for `asserted` and `argued` (the model still predicts `experience` almost every time). I stopped because the unit allows only one change.
+- **Criterion 2 (every label F1 ≥ 0.50):** Still MISSED. `asserted` improved but is below 0.50 at every seed, and `argued` is still 0.000 at seed 2024. Same fix as above, plus a larger test split so these scores are less jumpy.
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
+I meant `argued`, `asserted` and `experience` to be three distinct kinds of post, but the model learned mostly "is this `experience` or not": every real `experience` post was correct, while most `asserted` and `argued` posts were called `experience` (for example 9 of 11 `asserted` posts at seed 42 after the change). The confusion matrix shows one-way errors, so the model is leaning on the biggest label instead of learning the boundaries between all three.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════
