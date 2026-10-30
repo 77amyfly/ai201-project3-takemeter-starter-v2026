@@ -279,14 +279,14 @@ of next unit's variance. -->
 | F1 — `asserted` | 0.000 | 0.000 | 0.000 | 0.000 |
 | F1 — `experience` | 0.718 | 0.651 | 0.636 | 0.082 |
 
-
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1. Overall accuracy | ≥ 0.70 at every seed | MISSED | MISSED | MISSED | MISSED |
-| 2. Every label F1 | ≥ 0.50 at every seed | MISSED | MISSED | MISSED | MISSED |
-| 3. Label balance in `labels.csv` | no label > 50% or < 20% of rows | MET | MET | MET | MET |
-| 4. Second labeler agreement | ≥ 80% (24 of 30) |   |   |   |   |
-| 5. Confident third beats unsure third | gap ≥ 0.20 at every seed | MET | MET | MET | MET |
+| 1. Overall accuracy | ≥ 0.70 at every seed | 0.633 | 0.500 | 0.467 | MISSED |
+| 2. Every label F1 | ≥ 0.50 at every seed | 0.000 (`asserted`) | 0.000 (`asserted`) | 0.000 (`argued`, `asserted`) | MISSED |
+| 3. Label balance in `labels.csv` | no label > 50% or < 20% of rows | 21.0%–45.5% | 21.0%–45.5% | 21.0%–45.5% | MET |
+| 4. Second labeler agreement | ≥ 80% (24 of 30) | not tested | not tested | not tested | NOT TESTED |
+| 5. Confident third beats unsure third | gap ≥ 0.20 at every seed | 0.9 vs 0.5 (gap 0.40) | 0.8 vs 0.1 (gap 0.70) | 0.6 vs 0.1 (gap 0.50) | MET |
+
 
 ### Confusion matrix
 
@@ -313,13 +313,15 @@ Biggest confusion: 6 real `asserted` posts called `experience`. and 0 real `expe
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
+
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.70 at every seed | MISSED | Accuracy was 0.633, 0.500, 0.467 at seeds 42, 7, 2024. No seed reached 0.70; the best seed was 2 correct predictions short (19 of 30 vs. 21 needed). |
+| 2 | Every label F1 | ≥ 0.50 at every seed | MISSED | `asserted` F1 was 0.000 at all three seeds. `argued` also fell below 0.50 at seed 7 (0.182) and seed 2024 (0.000). |
+| 3 | Label balance in `labels.csv` | No label > 50% or < 20% of rows | MET | experience 45.5% (91), argued 33.5% (67), asserted 21.0% (42). All in range, but `asserted` is only 1 point above the floor. |
+| 4 | Second labeler agreement | ≥ 80% (24 of 30) | NOT TESTED | No second person labeled a sample of `labels.csv` from my definitions. |
+| 5 | Confident third beats unsure third | Gap ≥ 0.20 at every seed | MET | Gaps were 0.40, 0.70, 0.50 (confident third 0.9 / 0.8 / 0.6 vs. unsure third 0.5 / 0.1 / 0.1). |
+
 
 **Diagnoses**
 
@@ -332,6 +334,12 @@ Biggest confusion: 6 real `asserted` posts called `experience`. and 0 real `expe
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
+**Criteria 1 and 2 (MISSED): too few examples, not inconsistent labeling.**
+The model mostly predicts `experience`. In the seed-42 confusion matrix, all 14 real `experience` posts were correct, but all 6 `asserted` posts and 5 of 10 `argued` posts were also called `experience`. At seeds 7 and 2024 it got worse (`argued` → `experience` rose to 9 and 10), and seed 2024's accuracy (0.467 = 14/30) is exactly what always guessing `experience` would score.
+
+`asserted` has only 42 rows (21%) vs. 91 for `experience`, and the model defaults to the larger label: the confusion is one-directional (6 `asserted` called `experience`, 0 the other way) and `asserted` F1 was 0.000 at every seed, so this is not a lucky or unlucky split. `argued` shows the same collapse, with recall falling from 0.5 to 0.1 to 0.0 across seeds.
+
+My staff agreement check matched 30 of 30, so I found no sign that I apply label boundaries inconsistently. This is indirect evidence, since the staff taxonomy is not the one I used for my own 200 labels, but it points the same way as the confusion matrix. Accuracy also swung 0.167 across seeds (0.633 → 0.467), so a 30-post test split is too small to give a stable measure.
 
 
 ---
